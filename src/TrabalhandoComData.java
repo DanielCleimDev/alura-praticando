@@ -1,6 +1,7 @@
 import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
+import java.util.Locale;
 
 public class TrabalhandoComData {
     public static void main(String[] args) {
@@ -29,8 +30,13 @@ public class TrabalhandoComData {
         LocalDate dataPagamento = LocalDate.parse("2025-10-30");
         LocalDate dataPag2 = dataCompra.plusDays(45);
         //Period periodo = Period.between(dataCompra, dataPag2);
+
         long totalDias = ChronoUnit.DAYS.between(dataCompra, dataPag2);
 
         System.out.println("Data da compra: " + dataCompra + "\nData Pagamento: " + dataPag2 + "\nDiferença em dias: " + totalDias);
+
+        LocalDateTime dataAtual = LocalDateTime.now();
+        DateTimeFormatter formato2 = DateTimeFormatter.ofPattern("EEEE dd MMMM yyyy H:mm", Locale.of("pt", "BR"));
+        System.out.println(dataAtual.format(formato2));
     }
 }
