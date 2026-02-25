@@ -12,7 +12,7 @@ public class ValidandoCodigos {
             System.out.println("Digite um padrão no formato ABC-1234: ");
             String string = sc.nextLine();
 
-            Pattern pattern = Pattern.compile("[a-zA-Z]{3}-\\d{4}");
+            Pattern pattern = Pattern.compile("^[a-zA-Z]{3}-\\d{4}$");
             Matcher matcher = pattern.matcher(string);
 
             if (matcher.matches()) {
