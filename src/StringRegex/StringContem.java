@@ -16,6 +16,6 @@ public class StringContem {
         }else {
             System.out.printf("A palavra digitada '%s' não foi encontrada\n", encontrar);
         }
-
+        sc.close();
     }
 }
